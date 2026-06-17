@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Tecknack</title>
+<meta name="description" content="Get help, request account deletion, or contact {{COMPANY_NAME}} support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15182B;
+    --slate:#5B6178;
+    --paper:#F6F7FB;
+    --surface:#FFFFFF;
+    --line:#E3E5EF;
+    --accent:#FF6B47;
+    --accent-2:#2BB3A3;
+    --accent-3:#FFC857;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk',system-ui,sans-serif;}
+  .mono,.doc-meta,.fine-print,.toc-label,.eyebrow{font-family:'IBM Plex Mono',monospace;}
+  a{color:var(--ink);text-decoration:none;}
+  a:hover{color:var(--accent);}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .site-header{position:sticky;top:0;background:rgba(246,247,251,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;padding:10px 24px;flex-wrap:wrap;gap:12px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;}
+  .brand-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:20px;height:20px;flex:none;}
+  .brand-mark span{border-radius:3px;}
+  .brand-mark span:nth-child(1){background:var(--ink);}
+  .brand-mark span:nth-child(2){background:var(--accent);}
+  .brand-mark span:nth-child(3){background:var(--accent-3);}
+  .brand-mark span:nth-child(4){background:var(--accent-2);}
+  .site-nav{display:flex;gap:26px;font-size:0.94rem;font-weight:500;flex-wrap:wrap;}
+  .site-nav a.active{color:var(--accent);}
+
+  .site-footer{border-top:1px solid var(--line);padding:36px 0 30px;margin-top:24px;}
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;font-weight:600;}
+  .footer-links{display:flex;gap:20px;font-size:0.9rem;flex-wrap:wrap;}
+  .fine-print{width:100%;color:var(--slate);font-size:0.8rem;margin-top:18px;}
+
+  .doc-head{padding:48px 0 36px;}
+  .doc-meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;color:var(--slate);font-size:0.78rem;margin:0 0 14px;}
+  .legal-title{font-size:clamp(2rem,4vw,2.7rem);font-weight:600;margin:0 0 18px;}
+  .intro-text{color:var(--slate);max-width:640px;font-size:1.05rem;margin:0;}
+
+  .section{padding:8px 0 56px;}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:8px;}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;scroll-margin-top:96px;}
+  .card .icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .card .icon svg{width:18px;height:18px;stroke:#fff;}
+  .card h3{font-size:1.1rem;margin:0 0 8px;font-weight:600;}
+  .card p{color:var(--slate);margin:0 0 10px;font-size:0.95rem;}
+  .card a.email{color:var(--accent);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:0.92rem;}
+
+  .full-card{grid-column:1/-1;}
+  .ph{background:rgba(255,107,71,0.12);color:#B8431F;padding:1px 6px;border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:0.87em;font-weight:500;white-space:nowrap;}
+
+  .faq{margin-top:48px;max-width:760px;}
+  .faq h2{font-size:1.4rem;font-weight:600;margin:0 0 20px;}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 20px;margin-bottom:12px;}
+  summary{cursor:pointer;padding:16px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-family:'IBM Plex Mono',monospace;color:var(--accent);font-size:1.2rem;flex:none;}
+  details[open] summary::after{content:"–";}
+  details p{color:var(--slate);margin:0 0 18px;font-size:0.96rem;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;} html{scroll-behavior:auto;} }
+  @media (max-width:880px){ .card-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span class="brand-name">Tecknack</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="support.html" class="active">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="doc-head">
+    <h1 class="legal-title">We're here to help</h1>
+    <p class="intro-text">Have a question about one of our apps or games, a billing issue, or a privacy request? Reach out — a real person reads every message.</p>
+  </div>
+
+  <section class="section">
+    <div class="card-grid">
+
+      <div class="card" id="general">
+        <span class="icon" style="background:var(--accent);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 7l9 6 9-6"/></svg>
+        </span>
+        <h3>General support</h3>
+        <p>Bug reports, feature requests, or "how do I…" questions about any of our apps or games.</p>
+        <a class="email" href="mailto:support@tecknack.co.uk">support@tecknack.co.uk</a>
+        <p style="margin-top:10px;">We aim to reply within <span class="ph">48 hours</span>.</p>
+      </div>
+
+      <div class="card" id="billing">
+        <span class="icon" style="background:var(--accent-2);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2.5"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </span>
+        <h3>Billing &amp; refunds</h3>
+        <p>All purchases are billed by Apple or Google, so refunds and disputes start there. Stuck? We'll help you find the right place.</p>
+        <p style="margin:0 0 6px;font-size:0.9rem;">Apple: reportaproblem.apple.com</p>
+        <p style="margin:0;font-size:0.9rem;">Google: Play Store → Order history</p>
+      </div>
+
+      <div class="card" id="privacy-contact">
+        <span class="icon" style="background:var(--ink);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.6 8 11 4.6-2.4 8-6 8-11V5z"/></svg>
+        </span>
+        <h3>Privacy requests</h3>
+        <p>Access, correction, or deletion requests under GDPR, CCPA, or for a child's information.</p>
+        <a class="email" href="mailto:privacy@tecknack.co.uk">privacy@tecknack.co.uk</a>
+      </div>
+
+      <div class="card full-card" id="delete-account">
+        <span class="icon" style="background:var(--accent-3);">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--ink);"><circle cx="12" cy="8" r="3.5"/><path d="M4 20c0-3.6 3.6-6.5 8-6.5"/><line x1="16" y1="16" x2="21" y2="16"/></svg>
+        </span>
+        <h3>Request account &amp; data deletion</h3>
+        <p>The fastest way to delete your account is in-app, under Settings → Account → Delete Account. If you can't access the app, you can request deletion here:</p>
+        <p>Email <a class="email" href="mailto:support@tecknack.co.uk?subject=Delete%20my%20account">support@tecknack.co.uk</a> from the address linked to your account, with the subject line "Delete my account," and tell us which app you used and your in-app display name. We'll confirm receipt and complete deletion of your account and associated personal data within <span class="ph">5 working days</span>, except where we're required to retain certain records — see our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+      </div>
+
+    </div>
+
+    <div class="faq">
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>How do I cancel a subscription?</summary>
+        <p>Subscriptions are managed through your Apple ID (Settings → your name → Subscriptions) or your Google Play account (Play Store → Subscriptions), not through us directly. Cancelling there stops future renewals.</p>
+      </details>
+
+      <details>
+        <summary>I think I was charged twice — what do I do?</summary>
+        <p>Duplicate or unexpected charges are resolved through Apple or Google's own purchase history and refund tools, since they handle billing. If you're not sure where to start, email <a href="mailto:support@tecknack.co.uk">support@tecknack.co.uk</a> with the app name and approximate date, and we'll help you find the right report.</p>
+      </details>
+
+      <details>
+        <summary>How do I delete my account and data?</summary>
+        <p>Use the in-app "Delete Account" option under Settings, or email <a href="mailto:privacy@tecknack.co.uk">privacy@tecknack.co.uk</a> as described above. See the <a href="#delete-account">deletion section</a> on this page for details.</p>
+      </details>
+
+      <details>
+        <summary>Is this app safe for kids?</summary>
+        <p>Some of our apps and games are designed for a general audience, and some are built specifically with younger players in mind — each app's store listing says which it is. Apps directed at children follow the additional protections described in Section 7 of our <a href="privacy-policy.html#children">Privacy Policy</a>, including no behaviorally-targeted advertising.</p>
+      </details>
+
+      <details>
+        <summary>How do I report a bug or suggest a feature?</summary>
+        <p>Email <a href="mailto:{{SUPPORT_EMAIL}}">support@tecknack.co.uk</a> with the app name, your device and OS version, and what you expected to happen versus what actually happened — screenshots help a lot.</p>
+      </details>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      Tecknack
+    </span>
+    <nav class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <p class="fine-print">© 2026 Tecknack. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

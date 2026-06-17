@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms &amp; Conditions — Tecknack</title>
+<meta name="description" content="Terms and Conditions for all apps, games, and websites published by support@tecknack.co.uk.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15182B;
+    --slate:#5B6178;
+    --paper:#F6F7FB;
+    --surface:#FFFFFF;
+    --line:#E3E5EF;
+    --accent:#FF6B47;
+    --accent-2:#2BB3A3;
+    --accent-3:#FFC857;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk',system-ui,sans-serif;}
+  .mono,.doc-meta,.fine-print,.toc-label,.eyebrow{font-family:'IBM Plex Mono',monospace;}
+  a{color:var(--ink);text-decoration:none;}
+  a:hover{color:var(--accent);}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  .site-header{position:sticky;top:0;background:rgba(246,247,251,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;padding:10px 24px;flex-wrap:wrap;gap:12px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;}
+  .brand-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:20px;height:20px;flex:none;}
+  .brand-mark span{border-radius:3px;}
+  .brand-mark span:nth-child(1){background:var(--ink);}
+  .brand-mark span:nth-child(2){background:var(--accent);}
+  .brand-mark span:nth-child(3){background:var(--accent-3);}
+  .brand-mark span:nth-child(4){background:var(--accent-2);}
+  .site-nav{display:flex;gap:26px;font-size:0.94rem;font-weight:500;flex-wrap:wrap;}
+  .site-nav a.active{color:var(--accent);}
+
+  .site-footer{border-top:1px solid var(--line);padding:36px 0 30px;margin-top:24px;}
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;font-weight:600;}
+  .footer-links{display:flex;gap:20px;font-size:0.9rem;flex-wrap:wrap;}
+  .fine-print{width:100%;color:var(--slate);font-size:0.8rem;margin-top:18px;}
+
+  .doc-head{padding:48px 0 0;}
+  .doc-meta{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;color:var(--slate);font-size:0.78rem;margin:0 0 14px;}
+  .doc-meta .sep{color:var(--line);}
+  .legal-title{font-size:clamp(2rem,4vw,2.7rem);font-weight:600;margin:0 0 18px;}
+  .intro-text{color:var(--slate);max-width:680px;font-size:1.02rem;margin:0 0 36px;}
+
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;margin:0 0 48px;}
+  .toc-label{font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);margin:0 0 14px;}
+  .toc ol{columns:2;column-gap:32px;margin:0;padding:0;list-style:none;counter-reset:toc;}
+  .toc li{counter-increment:toc;margin-bottom:9px;font-size:0.92rem;break-inside:avoid;}
+  .toc li a::before{content:counter(toc) ". ";color:var(--accent);font-weight:600;font-family:'IBM Plex Mono',monospace;}
+
+  .legal-body{max-width:720px;padding-bottom:72px;}
+  .legal-body h2{font-size:1.35rem;font-weight:600;margin:46px 0 16px;scroll-margin-top:96px;}
+  .legal-body h2:first-of-type{margin-top:0;}
+  .legal-body h3{font-size:1.05rem;font-weight:600;margin:24px 0 10px;}
+  .legal-body p{margin:0 0 16px;}
+  .legal-body ul{margin:0 0 18px;padding-left:22px;}
+  .legal-body li{margin-bottom:9px;}
+  .legal-body a{color:var(--accent);border-bottom:1px solid rgba(255,107,71,0.35);}
+  .legal-body .caps{font-size:0.93em;color:var(--slate);}
+  .ph{background:rgba(255,107,71,0.12);color:#B8431F;padding:1px 6px;border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:0.87em;font-weight:500;white-space:nowrap;}
+  .callout{background:#FFF7EE;border:1px solid #F4DCC2;border-radius:10px;padding:16px 20px;font-size:0.92rem;color:#6B4A22;margin:0 0 28px;}
+  .callout strong{color:#4A2E12;}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none!important;} html{scroll-behavior:auto;} }
+  @media (max-width:680px){ .toc ol{columns:1;} }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span class="brand-name">Tecknack</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html" class="active">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="doc-head">
+    <p class="doc-meta">TERMS &amp; CONDITIONS <span class="sep">·</span> Last updated <span class="ph">1st February, 2026</span> <span class="sep">·</span> Applies to all apps, games &amp; websites published by <span class="ph">Tecknack</span></p>
+    <h1 class="legal-title">Terms &amp; Conditions</h1>
+    <p class="intro-text">These Terms &amp; Conditions ("Terms") are a legal agreement between you and <span class="ph">Tecknack</span> governing your access to and use of our apps, games, and websites (collectively, the "Services"). By downloading, installing, or using any Service, you agree to these Terms.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-label">On this page</p>
+    <ol>
+      <li><a href="#acceptance">Acceptance of these terms</a></li>
+      <li><a href="#changes">Changes to the services or terms</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#accounts">Accounts &amp; sign-in</a></li>
+      <li><a href="#license">License to use the services</a></li>
+      <li><a href="#conduct">Acceptable use</a></li>
+      <li><a href="#ugc">User-generated content</a></li>
+      <li><a href="#purchases">In-app purchases &amp; subscriptions</a></li>
+      <li><a href="#ip">Intellectual property</a></li>
+      <li><a href="#third-party">Third-party services &amp; content</a></li>
+      <li><a href="#warranty">Disclaimer of warranties</a></li>
+      <li><a href="#liability">Limitation of liability</a></li>
+      <li><a href="#indemnity">Indemnification</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#apple">Apple App Store additional terms</a></li>
+      <li><a href="#google">Google Play additional terms</a></li>
+      <li><a href="#export">Export compliance</a></li>
+      <li><a href="#law">Governing law &amp; dispute resolution</a></li>
+      <li><a href="#general">General provisions</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <article class="legal-body">
+
+    <h2 id="acceptance">1. Acceptance of these terms</h2>
+    <p>These Terms are a legal agreement between you and <span class="ph">Tecknack</span> governing your access to and use of our apps, games, and websites (collectively, the "Services"). By downloading, installing, or using any Service, you agree to these Terms. If you don't agree, please don't use the Service.</p>
+
+    <h2 id="changes">2. Changes to the services or terms</h2>
+    <p>We may add, change, suspend, or discontinue any part of a Service at any time. We may also update these Terms; if we make a material change, we'll provide reasonable notice — for example, through the Service or by updating the "Last updated" date above — before it takes effect. Continuing to use a Service after a change takes effect means you accept the updated Terms.</p>
+
+    <h2 id="eligibility">3. Eligibility</h2>
+    <p>You must be at least 13 years old (or the minimum age of digital consent in your country, if higher) to create an account or use most of our Services without a parent or guardian's involvement. Some Services in our portfolio are designed for younger children; where that's the case, the Service's listing will say so, and a parent or guardian's consent is required for the child to use any account or data-related features, consistent with our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <h2 id="accounts">4. Accounts &amp; sign-in</h2>
+    <p>Where a Service offers an account, you sign in using Sign in with Apple or Google Sign-In rather than a separate username and password. You're responsible for keeping your linked Apple or Google credentials secure and for all activity that happens under your account. Let us know right away at <span class="ph">support@tecknack.co.uk</span> if you suspect unauthorized use. You can delete your account at any time as described in our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <h2 id="license">5. License to use the services</h2>
+    <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download and use a Service on a device you own or control, for your personal, non-commercial use, in accordance with the applicable App Store or Google Play terms. We and our licensors retain all right, title, and interest in the Services, including all software, designs, text, graphics, and trademarks; nothing in these Terms transfers any of that ownership to you.</p>
+
+    <h2 id="conduct">6. Acceptable use</h2>
+    <p>When using a Service, you agree not to:</p>
+    <ul>
+      <li>Reverse-engineer, decompile, or extract source code from a Service, except where permitted by law.</li>
+      <li>Use cheats, bots, exploits, or unauthorized third-party software to gain an unfair advantage in a game.</li>
+      <li>Harass, threaten, or harm others, or upload unlawful, infringing, hateful, or sexually explicit content.</li>
+      <li>Interfere with the operation, security, or integrity of a Service.</li>
+      <li>Use a Service in any way that violates applicable law or the App Store or Google Play terms.</li>
+      <li>Resell, sublicense, or commercially exploit a Service without our written permission.</li>
+    </ul>
+
+    <h2 id="ugc">7. User-generated content</h2>
+    <p>Some Services let you submit content — such as usernames, messages, photos, or in-game creations ("User Content"). You retain ownership of your User Content, but you grant us a worldwide, royalty-free license to host, store, reproduce, and display it as needed to operate the Service (for example, showing your username on a leaderboard). You're responsible for your User Content and confirm you have the rights to share it. We may remove or moderate User Content that violates these Terms or applicable law, at our discretion.</p>
+
+    <h2 id="purchases">8. In-app purchases &amp; subscriptions</h2>
+    <p>Some Services offer in-app purchases, virtual currency, virtual items, or subscriptions ("Paid Features"). All Paid Features are billed through Apple App Store or Google Play Billing and governed by their respective terms.</p>
+    <ul>
+      <li>Virtual currency and virtual items have no real-world monetary value, can't be exchanged for cash, and are non-transferable. They're licensed to you for use within the Service only, and may be modified, suspended, or removed if the Service is changed or discontinued.</li>
+      <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period, through your Apple ID or Google Play account settings. We don't have the ability to cancel or refund a subscription directly.</li>
+      <li>All sales are final except as required by law or by the applicable platform's refund policy.</li>
+    </ul>
+
+    <h2 id="ip">9. Intellectual property</h2>
+    <p>All trademarks, logos, and brand names used in connection with our Services belong to <span class="ph">Tecknack</span> or our licensors. If you believe your intellectual property rights have been infringed by something appearing in one of our Services, contact us at <span class="ph">support@tecknack.co.uk</span> with enough detail for us to investigate.</p>
+
+    <h2 id="third-party">10. Third-party services &amp; content</h2>
+    <p>Our Services may include or link to third-party content, advertising, or services we don't control. We're not responsible for third-party content or practices, and your dealings with any third party are solely between you and that third party.</p>
+
+    <h2 id="warranty">11. Disclaimer of warranties</h2>
+    <p class="caps">THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WE DON'T WARRANT THAT A SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF HARMFUL COMPONENTS.</p>
+
+    <h2 id="liability">12. Limitation of liability</h2>
+    <p>
+        To the fullest extent permitted by law, we are not liable for:
+      <ul>
+          <li>Indirect, incidental, or consequential damages</li>
+          <li>Loss of data, profits, or revenue</li>
+          <li>Service interruptions or failures</li>
+          <li>Unauthorized access to your data</li>
+      </ul>
+        Our total liability shall not exceed the amount you paid (if any) for using the Services.  
+    </p>
+
+    <h2 id="indemnity">13. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold <span class="ph">Tecknack</span> harmless from any claims, damages, or expenses (including reasonable attorneys' fees) arising from your violation of these Terms or misuse of a Service.</p>
+
+    <h2 id="termination">14. Termination</h2>
+    <p>We may suspend or terminate your access to a Service at any time, with or without notice, if we reasonably believe you've violated these Terms, created risk or legal exposure for us, or for any other reason at our discretion — including discontinuing a Service entirely. You may stop using a Service, and delete your account, at any time. Sections of these Terms that by their nature should survive termination — such as Intellectual Property, Disclaimers, Limitation of Liability, and Governing Law — will survive.</p>
+
+    <h2 id="apple">15. Apple App Store additional terms</h2>
+    <p>
+        If you download the Services from the Apple App Store:
+    <ul>
+        <li>These Terms are between you and us, not Apple</li>
+        <li>Apple is not responsible for the Services or support</li>
+        <li>Apple has no obligation to provide maintenance or warranty</li>
+        <li>Apple is a third-party beneficiary of these Terms and may enforce them</li>
+    </ul>
+        You agree to comply with Apple’s App Store Terms of Service.
+    </p>
+
+    <h2 id="google">16. Google Play additional terms</h2>
+    <p>
+    If you download the Services from the Google Play Store:
+    <ul>
+        <li>These Terms are between you and us, not Google</li>
+        <li>Google is not responsible for the Services or support</li>
+        <li>Google is a third-party beneficiary of these Terms and may enforce them</li>
+    </ul>
+        You agree to comply with Google Play policies.
+    </p>
+
+    <h2 id="export">17. Export compliance</h2>
+    <p>You agree to comply with all applicable export and re-export control laws and regulations in your use of the Services.</p>
+
+    <h2 id="law">18. Governing law &amp; dispute resolution</h2>
+    <p>
+    These Terms are governed by the laws of United Kingdom, without regard to conflict of law principles.
+
+Any disputes shall be resolved through:
+    <ul>
+        <li>Negotiation in good faith, and if unresolved</li>
+        <li>Courts located in [Your Jurisdiction]</li>
+    </ul>
+
+You may also be entitled to mandatory consumer protection rights in your country.
+    </p>
+
+    <h2 id="general">19. General provisions</h2>
+    <p>
+        If any part of these Terms is found invalid, the remaining provisions remain in effect
+<ul>
+    <li>Failure to enforce a provision does not waive our rights</li>
+    <li>You may not transfer your rights under these Terms without our consent</li>
+    <li>We may assign our rights in case of merger, acquisition, or restructuring</li>
+</ul>
+    </p>
+
+    <h2 id="contact">20. Contact us</h2>
+    <p>Questions about these Terms? Contact us at <span class="ph">info@tecknack.co.uk</span></p>
+
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      Tecknack
+    </span>
+    <nav class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <p class="fine-print">© 2026 Tecknack All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

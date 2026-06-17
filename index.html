@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecknack — Apps & Games</title>
+<meta name="description" content="Tecknack designs and publishes apps and games across the App Store and Google Play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15182B;
+    --slate:#5B6178;
+    --paper:#F6F7FB;
+    --surface:#FFFFFF;
+    --line:#E3E5EF;
+    --accent:#FF6B47;
+    --accent-2:#2BB3A3;
+    --accent-3:#FFC857;
+    --radius:14px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand-name{font-family:'Space Grotesk',system-ui,sans-serif;}
+  .mono,.doc-meta,.fine-print,.toc-label,.eyebrow{font-family:'IBM Plex Mono',monospace;}
+  a{color:var(--ink);text-decoration:none;}
+  a:hover{color:var(--accent);}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px;border-radius:4px;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  img,svg{display:block;}
+
+  /* header */
+  .site-header{position:sticky;top:0;background:rgba(246,247,251,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;padding:10px 24px;flex-wrap:wrap;gap:12px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:1.05rem;}
+  .brand-mark{display:grid;grid-template-columns:1fr 1fr;gap:3px;width:20px;height:20px;flex:none;}
+  .brand-mark span{border-radius:3px;}
+  .brand-mark span:nth-child(1){background:var(--ink);}
+  .brand-mark span:nth-child(2){background:var(--accent);}
+  .brand-mark span:nth-child(3){background:var(--accent-3);}
+  .brand-mark span:nth-child(4){background:var(--accent-2);}
+  .site-nav{display:flex;gap:26px;font-size:0.94rem;font-weight:500;flex-wrap:wrap;}
+  .site-nav a.active{color:var(--accent);}
+
+  /* hero */
+  .hero{padding:72px 0 56px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate);font-weight:500;margin:0 0 18px;}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  h1.headline{font-size:clamp(2.3rem,5vw,3.5rem);line-height:1.08;font-weight:600;margin:0 0 20px;letter-spacing:-0.01em;}
+  .lede{font-size:1.12rem;color:var(--slate);max-width:520px;margin:0 0 32px;}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;padding:13px 22px;border-radius:10px;font-weight:600;font-size:0.94rem;border:1px solid var(--line);background:var(--surface);transition:transform .15s ease,border-color .15s ease;}
+  .btn:hover{transform:translateY(-1px);border-color:var(--ink);color:var(--ink);}
+  .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .btn.primary:hover{background:#000;color:#fff;}
+
+  /* mosaic */
+  .mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform:rotate(-2deg);}
+  .tile{aspect-ratio:1;border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 28px -16px rgba(21,24,43,0.35);}
+  .tile svg{width:40%;height:40%;}
+  .tile:nth-child(2n){transform:translateY(8px);}
+  .t-ink{background:var(--ink);}
+  .t-accent{background:var(--accent);}
+  .t-accent2{background:var(--accent-2);}
+  .t-accent3{background:var(--accent-3);}
+  .t-surface{background:var(--surface);border:1px solid var(--line);}
+  .t-ink svg,.t-accent svg,.t-accent2 svg{stroke:#fff;}
+  .t-accent3 svg,.t-surface svg{stroke:var(--ink);}
+
+  /* sections */
+  .section{padding:60px 0;}
+  .section-head{max-width:640px;margin:0 0 36px;}
+  h2.section-title{font-size:clamp(1.5rem,3vw,2.05rem);font-weight:600;margin:0 0 12px;}
+  .section-sub{color:var(--slate);font-size:1.02rem;margin:0;}
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+  .card .icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .card .icon svg{width:18px;height:18px;stroke:#fff;}
+  .card h3{font-size:1.1rem;margin:0 0 8px;font-weight:600;}
+  .card p{color:var(--slate);margin:0;font-size:0.94rem;}
+  .card.link{transition:border-color .15s ease,transform .15s ease;}
+  .card.link:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .card.link .arrow{color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:0.85rem;}
+
+  /* footer */
+  .site-footer{border-top:1px solid var(--line);padding:36px 0 30px;margin-top:24px;}
+  .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;}
+  .footer-brand{display:flex;align-items:center;gap:10px;font-weight:600;}
+  .footer-links{display:flex;gap:20px;font-size:0.9rem;flex-wrap:wrap;}
+  .fine-print{width:100%;color:var(--slate);font-size:0.8rem;margin-top:18px;}
+
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{order:-1;max-width:320px;margin:0 auto;}
+    .card-grid{grid-template-columns:1fr;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none!important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      <span class="brand-name">Tecknack</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">App &amp; game studio</p>
+        <h1 class="headline">We build apps.<br>Across every domain.<br>One company behind all of them.</h1>
+        <p class="lede">Tecknack designs, ships, and supports mobile apps and games on the App Store and Google Play — built to be useful or fun first, and respectful of your data always.</p>
+        <div class="btn-row">
+          <a href="privacy-policy.html" class="btn primary">Read our Privacy Policy</a>
+          <a href="support.html" class="btn">Get support</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="mosaic" aria-hidden="true">
+          <div class="tile t-accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="4.5"/><line x1="7" y1="10.5" x2="7" y2="14.5"/><line x1="5" y1="12.5" x2="9" y2="12.5"/><circle cx="16" cy="11.5" r="1"/><circle cx="19" cy="13.5" r="1"/></svg>
+          </div>
+          <div class="tile t-surface">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-9.6-9.3C1.2 7.4 3 4.5 6.2 4.2c2-.2 3.5 1 5.8 3.4 2.3-2.4 3.8-3.6 5.8-3.4 3.2.3 5 3.2 3.8 6.5C19.5 15.4 12 20 12 20z"/></svg>
+          </div>
+          <div class="tile t-ink">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 3 5 6.2 5 9.2A5 5 0 0 1 7 12.2C7 9.2 9 6 12 3z"/><path d="M12 12v8"/></svg>
+          </div>
+          <div class="tile t-accent3">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6.8C4 5.8 4.8 5 5.8 5H12v14H5.8C4.8 19 4 18.2 4 19z"/><path d="M20 19V6.8c0-1-.8-1.8-1.8-1.8H12v14h6.2c1 0 1.8-.2 1.8 0z"/></svg>
+          </div>
+          <div class="tile t-accent2">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.2"/></svg>
+          </div>
+          <div class="tile t-surface">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 1 1-4.6-7.6"/><path d="M21 4l-9.5 9.5"/><path d="M21 4l-6 1 1 6z"/></svg>
+          </div>
+          <div class="tile t-accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l8.5-8 1.7 1.7L7 11h13.3a1 1 0 0 1 .9 1.5l-1.6 2.8A1 1 0 0 1 18.7 16H6"/><path d="M3 11l4 4-2 6-4-2z"/></svg>
+          </div>
+          <div class="tile t-ink">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.8 9.2 9.6 11l-1.8 5.2 5.2-1.8z"/></svg>
+          </div>
+          <div class="tile t-accent3">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">What we build</h2>
+        <p class="section-sub">A small, focused company shipping a wide range of apps and games — every Service we publish follows the same standards for quality and privacy.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="icon" style="background:var(--accent);">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          </span>
+          <h3>Everyday apps</h3>
+          <p>Utilities, productivity, and lifestyle tools across a growing set of categories — designed to solve one job well.</p>
+        </div>
+        <div class="card">
+          <span class="icon" style="background:var(--accent-2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9" rx="4.5"/><line x1="7" y1="10.5" x2="7" y2="14.5"/><line x1="5" y1="12.5" x2="9" y2="12.5"/><circle cx="16" cy="11.5" r="1"/><circle cx="19" cy="13.5" r="1"/></svg>
+          </span>
+          <h3>Games</h3>
+          <p>Casual and core games built to be fun first — some for a general audience, some made specifically with younger players in mind.</p>
+        </div>
+        <div class="card">
+          <span class="icon" style="background:var(--ink);">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg>
+          </span>
+          <h3>What's next</h3>
+          <p>We're always expanding into new domains. Whatever we publish next, it operates under the same Privacy Policy and Terms as everything here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Built on trust</h2>
+        <p class="section-sub">The same three documents apply to every app and game we publish, so you always know where to look.</p>
+      </div>
+      <div class="card-grid">
+        <a href="privacy-policy.html" class="card link">
+          <h3>Privacy Policy</h3>
+          <p>What we collect, why we collect it, and the choices you have — including for apps that may be used by children.</p>
+          <p class="arrow" style="margin-top:14px;">Read the policy →</p>
+        </a>
+        <a href="terms-and-conditions.html" class="card link">
+          <h3>Terms &amp; Conditions</h3>
+          <p>The plain-language rules for using our apps and games, including purchases, accounts, and acceptable use.</p>
+          <p class="arrow" style="margin-top:14px;">Read the terms →</p>
+        </a>
+        <a href="support.html" class="card link">
+          <h3>Support</h3>
+          <p>Billing questions, bug reports, or a request to delete your account and data — a real person reads every message.</p>
+          <p class="arrow" style="margin-top:14px;">Get support →</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+      Tecknack
+    </span>
+    <nav class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <p class="fine-print">© 2025 Tecknack. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
