@@ -9,6 +9,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+    .brand {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 0;              /* No gap */
+
+}
+
+.logo {
+
+  width: 30px;
+
+  height: 30px;
+
+  margin: 0;
+
+}
+
+.text {
+
+  margin: -12px;
+
+  padding: 0;
+
+}
   :root{
     --ink:#15182B;
     --slate:#5B6178;
@@ -83,8 +110,11 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-      <span class="brand-name">Tecknack</span>
+        <div class="brand">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <span class="text">ecknack</span>
+</div>
+      
     </a>
     <nav class="site-nav">
       <a href="index.html">Home</a>
@@ -252,8 +282,10 @@ You may also be entitled to mandatory consumer protection rights in your country
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <span class="footer-brand">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-      Tecknack
+        <div class="brand">
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <span class="text">ecknack</span>
+</div>
     </span>
     <nav class="footer-links">
       <a href="privacy-policy.html">Privacy Policy</a>
