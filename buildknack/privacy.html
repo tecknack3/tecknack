@@ -1,621 +1,502 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BuildKnack Privacy Policy</title>
-<link rel="stylesheet" href="assets/css/legal.css">
+<style>
+  :root {
+    --ink: #1c1f26;
+    --muted: #5b6472;
+    --line: #e2e5ea;
+    --accent: #1f5a4a;
+    --accent-soft: #eaf3f0;
+    --warn-bg: #fff8ea;
+    --warn-border: #e8c46b;
+    --bg: #fbfaf7;
+    --panel: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0,1fr);
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+  nav.toc {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 36px 22px 36px 32px;
+    border-right: 1px solid var(--line);
+    background: var(--panel);
+  }
+  nav.toc h2 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 16px;
+  }
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: item;
+  }
+  nav.toc li {
+    margin-bottom: 4px;
+  }
+  nav.toc a {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+  }
+  nav.toc a:hover { background: var(--accent-soft); color: var(--accent); }
+  nav.toc a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  nav.toc .toc-appendix {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  main {
+    padding: 56px 64px 100px;
+    max-width: 860px;
+  }
+  header.doc-header {
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 2px solid var(--ink);
+  }
+  header.doc-header h1 {
+    font-size: 34px;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  header.doc-header .updated {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .intro p { font-size: 17px; }
+
+  section.policy-section {
+    margin: 48px 0;
+    scroll-margin-top: 24px;
+  }
+  section.policy-section h2 {
+    font-size: 22px;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.policy-section h3 {
+    font-size: 17px;
+    margin: 26px 0 8px;
+    color: var(--accent);
+  }
+  p { margin: 0 0 14px; font-size: 16px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; font-size: 16px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 22px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  tr:nth-child(even) td { background: #fafbfa; }
+
+  .note {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #6b5416;
+  }
+  .note strong { color: #4a3a0f; }
+
+  section#appendix {
+    background: #f4f2ec;
+    border-radius: 10px;
+    padding: 30px 34px;
+    border: 1px solid var(--line);
+  }
+  section#appendix ol { padding-left: 20px; }
+  section#appendix li { margin-bottom: 10px; }
+
+  .disclaimer {
+    margin-top: 20px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  footer.doc-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    nav.toc { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--line); }
+    main { padding: 32px 24px 80px; }
+  }
+</style>
 </head>
 <body>
-<div class="container">
-
-<header class="legal-header">
-<h1>Privacy Policy</h1>
-<p><strong>Effective Date:</strong> 1 August 2026</p>
-<p><strong>Last Updated:</strong> 1 August 2026</p>
-<p>BuildKnack is operated by <strong>Tecknack Limited</strong>.</p>
-</header>
-
-<nav>
-<h2>Contents</h2>
-<ol>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#scope">Scope of this Privacy Policy</a></li>
-<li><a href="#controller">Who We Are (Data Controller)</a></li>
-<li><a href="#information-you-provide">Information You Provide</a></li>
-<li><a href="#automatic-information">Information We Collect Automatically</a></li>
-<li><a href="#ai-processing">Information Processed by AI</a></li>
-<li><a href="#how-we-use">How We Use Your Information</a></li>
-<li><a href="#legal-basis">Legal Basis for Processing</a></li>
-<li><a href="#local-storage">Information Stored on Your Device</a></li>
-<li><a href="#cloud-storage">Information Stored in the Cloud</a></li>
-<li><a href="#third-party-services">Third-Party Service Providers</a></li>
-<li><a href="#international-transfers">International Data Transfers</a></li>
-<li><a href="#retention">Data Retention</a></li>
-<li><a href="#account-deletion">Account Deletion</a></li>
-<li><a href="#security">Data Security</a></li>
-<li><a href="#rights">Your Privacy Rights</a></li>
-<li><a href="#children">Children's Privacy</a></li>
-<li><a href="#changes">Changes to this Privacy Policy</a></li>
-<li><a href="#contact">Contact Us</a></li>
-</ol>
-</nav>
-
-<section id="introduction">
-
-<h2>1. Introduction</h2>
-
-<p>Welcome to BuildKnack, a mobile application developed and operated by Tecknack Limited ("Tecknack", "we", "our" or "us").</p>
-
-<p>Your privacy is important to us. This Privacy Policy explains how we collect, use, store, disclose and protect your personal information when you use the BuildKnack mobile application, related services and any associated support services (collectively, the "Service").</p>
-
-<p>BuildKnack is designed to help Builders create project estimates, quotations and contract documents using artificial intelligence together with information provided by the user. Much of the information you create within the Service is stored locally on your device, while certain information is processed or stored securely using trusted cloud service providers to deliver essential functionality.</p>
-
-<p>This Privacy Policy explains what information we collect, why we collect it, how it is used, how long we retain it, the third parties that help us provide the Service and the rights available to you regarding your personal information.</p>
-
-<p>Please read this Privacy Policy carefully before using the Service.</p>
-
-</section>
-<section id="scope">
-
-<h2>2. Scope of this Privacy Policy</h2>
-
-<p>This Privacy Policy applies to your use of the BuildKnack mobile application and any related services operated by Tecknack Limited.</p>
-
-<p>It explains how we collect, use, store, disclose and protect personal information when you use the Service.</p>
-
-<h3>2.1 What this Policy Covers</h3>
-
-<p>This Privacy Policy applies to information processed through:</p>
-
-<ul>
-
-<li>the BuildKnack mobile application;</li>
-
-<li>our account management services;</li>
-
-<li>subscription management;</li>
-
-<li>AI-powered estimate analysis;</li>
-
-<li>customer support communications; and</li>
-
-<li>other services operated by Tecknack Limited that reference this Privacy Policy.</li>
-
-</ul>
-
-<h3>2.2 Third-Party Services</h3>
-
-<p>The Service relies on third-party providers such as authentication providers, cloud infrastructure providers, payment processors and AI service providers.</p>
-
-<p>Those providers may process information in accordance with their own privacy policies and terms of service.</p>
-
-<h3>2.3 External Websites</h3>
-
-<p>If our Service contains links to third-party websites or services, this Privacy Policy does not apply to those websites or services.</p>
-
-<p>We encourage you to review the privacy policies of any third-party services that you use.</p>
-
-</section>
-<section id="controller">
-
-<h2>3. Who We Are (Data Controller)</h2>
-
-<p>For the purposes of applicable data protection laws, including the UK General Data Protection Regulation (UK GDPR), Tecknack Limited is the data controller for the personal information processed in connection with BuildKnack.</p>
-
-<p><strong>Company:</strong> Tecknack Limited</p>
-
-<p><strong>Website:</strong><br>
-<a href="https://www.tecknack.co.uk">tecknack.co.uk</a>
-</p>
-
-<p><strong>General Support:</strong><br>
-support@tecknack.co.uk
-</p>
-
-<p><strong>Privacy Enquiries:</strong><br>
-privacy@tecknack.co.uk
-</p>
-
-<p>If you have any questions regarding this Privacy Policy or the way your personal information is processed, please contact us using the details provided above.</p>
-
-</section>
-<section id="information-you-provide">
-
-<h2>4. Information You Provide</h2>
-
-<p>You choose what information you provide when using BuildKnack. This information is used to provide the features you request and to support the operation of the Service.</p>
-
-<h3>4.1 Account Information</h3>
-
-<p>When you sign in using Apple Sign In or Google Sign-In, we receive information necessary to authenticate your account.</p>
-
-<p>We do not require you to create or manage a separate username or password for BuildKnack.</p>
-
-<h3>4.2 Builder Profile</h3>
-
-<p>You may provide information including:</p>
-
-<ul>
-
-<li>your name;</li>
-
-<li>company name;</li>
-
-<li>business address;</li>
-
-<li>contact details;</li>
-
-<li>trade information; and</li>
-
-<li>builder pricing and labour rates.</li>
-
-</ul>
-
-<h3>4.3 Project Information</h3>
-
-<p>You may create Jobs within the Service that include:</p>
-
-<ul>
-
-<li>project descriptions;</li>
-
-<li>project photographs;</li>
-
-<li>measurements;</li>
-
-<li>notes;</li>
-
-<li>pricing information; and</li>
-
-<li>other project-related information.</li>
-
-</ul>
-
-<h3>4.4 Customer Information</h3>
-
-<p>You may enter information relating to your customers, such as names, addresses, telephone numbers, email addresses and other information necessary for preparing estimates, Quotes and Contracts.</p>
-
-<h3>4.5 Generated Documents</h3>
-
-<p>You may create and edit estimates, Quotes and Contract documents using the Service.</p>
-
-<p>These documents remain under your control and responsibility.</p>
-
-</section>
-<section id="automatic-information">
-
-<h2>5. Information We Collect Automatically</h2>
-
-<p>Some information is collected automatically when you use BuildKnack in order to provide the Service, manage subscriptions, improve performance and protect against misuse.</p>
-
-<h3>5.1 Authentication Information</h3>
-
-<p>When you sign in using Apple or Google, we process the authentication information necessary to recognise your account and provide access to the Service.</p>
-
-<h3>5.2 Subscription Information</h3>
-
-<p>We process information relating to your selected plan, subscription status, purchases and remaining usage allowances.</p>
-
-<h3>5.3 Usage Information</h3>
-
-<p>We collect information relating to how the Service is used, including feature usage, job allowances, AI analysis usage and general application activity.</p>
-
-<p>This information helps us improve the reliability and functionality of the Service.</p>
-
-<h3>5.4 Device Information</h3>
-
-<p>We may collect limited technical information about your device, such as operating system version, application version and other technical diagnostics necessary for security, troubleshooting and performance monitoring.</p>
-
-<h3>5.5 Abuse Prevention</h3>
-
-<p>To help prevent misuse of promotional offers and free plan allowances, we generate a one-way cryptographic hash based on your authentication provider identifier.</p>
-
-<p>The original provider identifier is not stored for this purpose. The hashed identifier is used solely for fraud prevention and abuse detection.</p>
-
-</section>
-<section id="ai-processing">
-
-<h2>6. Information Processed by AI</h2>
-
-<p>BuildKnack uses artificial intelligence to assist in generating project estimates based on information provided by the Builder.</p>
-
-<h3>6.1 Information Sent for AI Processing</h3>
-
-<p>When you request an AI Estimate Analysis, we may securely process:</p>
-
-<ul>
-
-<li>project photographs;</li>
-
-<li>project descriptions;</li>
-
-<li>Builder pricing and labour rates; and</li>
-
-<li>other information necessary to generate the requested estimate.</li>
-
-</ul>
-
-<h3>6.2 Purpose of AI Processing</h3>
-
-<p>The information is processed solely for the purpose of generating the estimate requested by you and improving the operation of the AI-assisted features of the Service where permitted by applicable law and our agreements with service providers.</p>
-
-<h3>6.3 Human Review</h3>
-
-<p>AI-generated estimates are produced automatically.</p>
-
-<p>We do not routinely review the content of your Jobs, photographs, estimates or generated documents unless reasonably necessary for security, legal compliance, technical support requested by you or where otherwise required by law.</p>
-
-<h3>6.4 AI Accuracy</h3>
-
-<p>Artificial intelligence may produce inaccurate or incomplete results. You remain responsible for reviewing and verifying all AI-generated estimates before relying upon them for commercial purposes.</p>
-
-</section>
-<section id="how-we-use">
-
-<h2>7. How We Use Your Information</h2>
-
-<p>We use personal information only where necessary to provide the Service, fulfil our contractual obligations, improve BuildKnack, protect the security of the Service and comply with applicable legal requirements.</p>
-
-<h3>7.1 Providing the Service</h3>
-
-<p>We use your information to:</p>
-
-<ul>
-
-<li>authenticate your account;</li>
-
-<li>provide access to your subscription and purchased features;</li>
-
-<li>generate AI-assisted estimates;</li>
-
-<li>create Quotes and Contract documents;</li>
-
-<li>manage job allowances and usage limits; and</li>
-
-<li>provide customer support.</li>
-
-</ul>
-
-<h3>7.2 Improving the Service</h3>
-
-<p>We may use technical and usage information to improve performance, reliability, security, usability and future functionality of BuildKnack.</p>
-
-<h3>7.3 Fraud Prevention</h3>
-
-<p>We process limited information to detect, investigate and prevent fraud, abuse of promotional offers, unauthorised access and other misuse of the Service.</p>
-
-<h3>7.4 Legal Compliance</h3>
-
-<p>We may process information where necessary to comply with legal obligations, enforce our Terms and Conditions, protect our legal rights or respond to lawful requests from public authorities.</p>
-
-</section>
-<section id="legal-basis">
-
-<h2>8. Legal Basis for Processing</h2>
-
-<p>Where the UK GDPR or EU GDPR applies, we process personal information only where a lawful basis exists.</p>
-
-<h3>8.1 Performance of a Contract</h3>
-
-<p>Most information is processed because it is necessary to provide the BuildKnack Service that you have requested, including authentication, subscription management, AI estimate generation and document creation.</p>
-
-<h3>8.2 Legitimate Interests</h3>
-
-<p>We process certain information where necessary for our legitimate interests, provided those interests are not overridden by your rights and freedoms.</p>
-
-<p>These interests include improving the Service, maintaining security, preventing fraud, monitoring system performance and providing customer support.</p>
-
-<h3>8.3 Legal Obligations</h3>
-
-<p>Some information may be processed where required to comply with applicable laws, regulatory requirements, court orders or lawful requests from public authorities.</p>
-
-<h3>8.4 Consent</h3>
-
-<p>Where we rely on your consent, you may withdraw that consent at any time. Withdrawal of consent does not affect the lawfulness of processing carried out before consent was withdrawn.</p>
-
-</section>
-<section id="local-storage">
-
-<h2>9. Information Stored on Your Device</h2>
-
-<p>BuildKnack is designed so that much of your project information remains stored locally on your device rather than on our servers.</p>
-
-<h3>9.1 Local Information</h3>
-
-<p>The following information is normally stored locally on your device:</p>
-
-<ul>
-
-<li>Jobs;</li>
-
-<li>project photographs;</li>
-
-<li>customer information;</li>
-
-<li>Builder profile;</li>
-
-<li>Builder rates;</li>
-
-<li>estimates;</li>
-
-<li>Quotes;</li>
-
-<li>Contract documents; and</li>
-
-<li>other project-related information created by you.</li>
-
-</ul>
-
-<h3>9.2 Your Responsibility</h3>
-
-<p>You are responsible for protecting your device and maintaining appropriate backups where required.</p>
-
-<p>If your device is lost, damaged or reset, locally stored information may become permanently unavailable unless you have created your own backups.</p>
-
-</section>
-<section id="cloud-storage">
-
-<h2>10. Information Stored in the Cloud</h2>
-
-<p>Certain information is stored securely using trusted cloud service providers in order to provide account functionality, subscription management and fraud prevention.</p>
-
-<h3>10.1 Cloud Information</h3>
-
-<p>Depending on the features you use, cloud-stored information may include:</p>
-
-<ul>
-
-<li>authentication information;</li>
-
-<li>Builder company profile;</li>
-
-<li>Builder pricing and labour rates;</li>
-
-<li>subscription status;</li>
-
-<li>purchase information;</li>
-
-<li>usage counters;</li>
-
-<li>remaining job allowances; and</li>
-
-<li>hashed identifiers used solely for fraud prevention.</li>
-
-</ul>
-
-<h3>10.2 Fraud Prevention Identifier</h3>
-
-<p>To help prevent repeated misuse of free plan allowances, we generate a one-way cryptographic hash derived from your authentication provider identifier.</p>
-
-<p>This hash cannot reasonably be used to identify you directly and is retained only for the period described in this Privacy Policy.</p>
-
-</section>
-<section id="third-party-services">
-
-<h2>11. Third-Party Service Providers</h2>
-
-<p>We use carefully selected third-party providers to operate and improve BuildKnack.</p>
-
-<p>These providers process information only to the extent necessary to perform services on our behalf or to provide services requested by you.</p>
-
-<h3>11.1 Service Providers</h3>
-
-<p>Depending on your use of the Service, we may use providers including:</p>
-
-<ul>
-
-<li>Firebase Authentication;</li>
-
-<li>Firebase Cloud Firestore;</li>
-
-<li>Firebase Storage;</li>
-
-<li>Firebase Analytics;</li>
-
-<li>Firebase Crashlytics;</li>
-
-<li>Google Cloud Platform;</li>
-
-<li>OpenAI (for AI-assisted estimate generation);</li>
-
-<li>RevenueCat (subscription management);</li>
-
-<li>Apple App Store;</li>
-
-<li>Google Play Store; and</li>
-
-<li>Apple and Google authentication services.</li>
-
-</ul>
-
-<h3>11.2 Payment Processing</h3>
-
-<p>Subscription purchases are processed by Apple or Google through their respective app stores together with RevenueCat.</p>
-
-<p>We do not receive or store your full payment card information.</p>
-
-<h3>11.3 Changes to Providers</h3>
-
-<p>We may change, replace or add service providers where reasonably necessary to improve the Service or support future functionality.</p>
-
-</section>
-<section id="international-transfers">
-
-<h2>12. International Data Transfers</h2>
-
-<p>Some of the third-party providers used to operate BuildKnack may process information outside the United Kingdom or your country of residence.</p>
-
-<h3>12.1 International Processing</h3>
-
-<p>Where personal information is transferred internationally, we take reasonable steps to ensure that appropriate safeguards are in place in accordance with applicable data protection laws.</p>
-
-<h3>12.2 Appropriate Safeguards</h3>
-
-<p>Depending on the circumstances, these safeguards may include adequacy regulations, Standard Contractual Clauses approved by relevant authorities or other recognised legal mechanisms.</p>
-
-<h3>12.3 Global Availability</h3>
-
-<p>As BuildKnack expands into additional countries, information may be processed in locations where our trusted service providers operate, subject to appropriate legal safeguards.</p>
-
-</section>
-<section id="retention">
-
-<h2>13. Data Retention</h2>
-
-<p>We retain personal information only for as long as reasonably necessary to provide the Service, comply with legal obligations, resolve disputes, enforce our agreements and protect the security and integrity of BuildKnack.</p>
-
-<h3>13.1 Information Stored on Your Device</h3>
-
-<p>Information stored locally on your device, including Jobs, photographs, customer information, Quotes, Contracts, estimates, Builder profiles and Builder rates, remains on your device until you delete it, uninstall the application or remove it yourself.</p>
-
-<h3>13.2 Cloud-Stored Information</h3>
-
-<p>Information stored in our cloud services, including subscription information, Builder company profile, Builder rates, usage counters and account information, is retained only for as long as necessary to provide the Service or meet legal and operational requirements.</p>
-
-<h3>13.3 Fraud Prevention Records</h3>
-
-<p>Where you delete your BuildKnack account, the one-way hashed identifier used solely for fraud prevention and abuse detection may be retained for up to six (6) months after account deletion.</p>
-
-<p>This allows us to prevent repeated abuse of free plan allowances while avoiding retention of your original authentication provider identifier.</p>
-
-<h3>13.4 Legal Requirements</h3>
-
-<p>We may retain certain information for longer where required to comply with legal obligations, resolve disputes, investigate fraud or enforce our legal rights.</p>
-
-</section>
-<section id="account-deletion">
-
-<h2>14. Account Deletion</h2>
-
-<p>You may delete your BuildKnack account at any time using the account management features available within the application.</p>
-
-<h3>14.1 What Happens When You Delete Your Account</h3>
-
-<p>When you request account deletion, we will permanently delete or anonymise your cloud-based personal information within a reasonable period unless we are required to retain certain information by law.</p>
-
-<h3>14.2 Fraud Prevention Record</h3>
-
-<p>The one-way hashed identifier used solely for abuse prevention may be retained for up to six (6) months after account deletion before being permanently removed.</p>
-
-<h3>14.3 Local Device Information</h3>
-
-<p>Deleting your BuildKnack account does not automatically remove information stored locally on your device.</p>
-
-<p>You may remove locally stored information by deleting it within the application or uninstalling the application from your device.</p>
-
-</section>
-<section id="security">
-
-<h2>15. Data Security</h2>
-
-<p>We take reasonable technical and organisational measures designed to protect personal information against unauthorised access, loss, misuse, alteration or disclosure.</p>
-
-<h3>15.1 Security Measures</h3>
-
-<p>Depending on the nature of the information being processed, these measures may include encryption in transit, authenticated access controls, secure cloud infrastructure, monitoring of our systems and restricted access to personal information.</p>
-
-<h3>15.2 Your Responsibilities</h3>
-
-<p>You are responsible for maintaining the security of your device, operating system and authentication methods used to access BuildKnack.</p>
-
-<p>You should keep your device protected using appropriate security features such as device passcodes, biometric authentication and operating system updates.</p>
-
-<h3>15.3 No Absolute Security</h3>
-
-<p>While we use reasonable security measures, no method of electronic transmission or storage is completely secure.</p>
-
-<p>Accordingly, we cannot guarantee the absolute security of information processed through the Service.</p>
-
-</section>
-<section id="rights">
-
-<h2>16. Your Privacy Rights</h2>
-
-<p>Depending on where you live, you may have rights regarding your personal information under applicable data protection laws.</p>
-
-<h3>16.1 Your Rights</h3>
-
-<p>Subject to applicable law, you may have the right to:</p>
-
-<ul>
-
-<li>request access to your personal information;</li>
-
-<li>request correction of inaccurate information;</li>
-
-<li>request deletion of personal information;</li>
-
-<li>request restriction of processing;</li>
-
-<li>object to certain processing activities;</li>
-
-<li>request a copy of your information in a portable format where applicable; and</li>
-
-<li>withdraw consent where processing is based on consent.</li>
-
-</ul>
-
-<h3>16.2 Exercising Your Rights</h3>
-
-<p>You may exercise your privacy rights by contacting us using the contact details provided in this Privacy Policy.</p>
-
-<p>We may request reasonable information to verify your identity before responding to your request.</p>
-
-</section>
-<section id="children">
-
-<h2>17. Children's Privacy</h2>
-
-<p>BuildKnack is intended for professional Builders and other users aged 16 years or older.</p>
-
-<p>We do not knowingly collect personal information directly from children under the age of 16.</p>
-
-<p>If we become aware that personal information relating to a child under 16 has been collected without appropriate legal authority, we will take reasonable steps to delete that information as soon as practicable.</p>
-
-<p>If you believe that a child has provided personal information through the Service, please contact us.</p>
-
-</section>
-<section id="changes">
-
-<h2>18. Changes to this Privacy Policy</h2>
-
-<p>We may update this Privacy Policy from time to time to reflect changes to our services, legal requirements, technology or business operations.</p>
-
-<p>Where we make material changes, we will update the effective date shown at the top of this Privacy Policy and, where required by applicable law, provide appropriate notice through the Service or by other reasonable means.</p>
-
-<p>Your continued use of BuildKnack after an updated Privacy Policy becomes effective constitutes your acknowledgement of the revised Privacy Policy.</p>
-
-</section>
-<section id="contact">
-
-<h2>19. Contact Us</h2>
-
-<p>If you have any questions about this Privacy Policy or how your personal information is processed, please contact us.</p>
-
-<p><strong>Tecknack Limited</strong></p>
-
-<p>
-Website: <a href="https://www.tecknack.co.uk">tecknack.co.uk</a>
-</p>
-
-<p>
-General Support:<br>
-support@tecknack.co.uk
-</p>
-
-<p>
-Privacy Enquiries:<br>
-privacy@tecknack.co.uk
-</p>
-
-<p>We aim to respond to enquiries within approximately 48 hours, although response times may vary.</p>
-
-</section>
-
-<footer>
-<p>&copy; 2026 Tecknack Limited. All rights reserved.</p>
-</footer>
+<div class="layout">
+
+  <nav class="toc" id="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#s1">1. Who We Are</a></li>
+      <li><a href="#s2">2. Personal Data We Collect</a></li>
+      <li><a href="#s3">3. Use &amp; Legal Basis</a></li>
+      <li><a href="#s4">4. AI-Assisted Estimates</a></li>
+      <li><a href="#s5">5. Who We Share Data With</a></li>
+      <li><a href="#s6">6. International Transfers</a></li>
+      <li><a href="#s7">7. Data Retention</a></li>
+      <li><a href="#s8">8. Deletion &amp; Your Rights</a></li>
+      <li><a href="#s9">9. Your Customers' Data</a></li>
+      <li><a href="#s10">10. Children</a></li>
+      <li><a href="#s11">11. Security</a></li>
+      <li><a href="#s12">12. Analytics</a></li>
+      <li><a href="#s13">13. Changes to This Policy</a></li>
+      <li><a href="#s14">14. Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="doc-header">
+      <h1>BuildKnack Privacy Policy</h1>
+      <div class="updated">Last updated: 1 August 2026</div>
+    </header>
+
+    <div class="intro">
+      <p>This Privacy Policy explains how Tecknack ("<strong>we</strong>", "<strong>us</strong>", "<strong>our</strong>"), the provider of the BuildKnack app ("<strong>App</strong>"), collects, uses, stores and shares personal data. It is written to comply with the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
+      <p>We are the data controller for the personal data described in this Policy, except where stated otherwise (see Section 9, "Your Customers' Data").</p>
+    </div>
+
+    <section class="policy-section" id="s1">
+      <h2>1. Who We Are</h2>
+      <p>
+        Tecknack / BuildKnack<br>
+        Tecknack Limited<br>
+        Company Number: 15701534<br>
+        support@tecknack.co.uk<br>
+      </p>
+      <p>If you have any questions about this Policy or how we handle your data, contact us at privacy@tecknack.co.uk</p>
+    </section>
+
+    <section class="policy-section" id="s2">
+      <h2>2. Personal Data We Collect</h2>
+
+      <h3>2.1 Account and identity data</h3>
+      <ul>
+        <li>Firebase user ID</li>
+        <li>Email address</li>
+        <li>Display name</li>
+        <li>Sign-in provider (Google or Apple) and provider identifier</li>
+        <li>Email verification status</li>
+        <li>Authentication and session security timestamps</li>
+        <li>Where you sign in with Apple, Apple may provide a private relay email address instead of your real address if you choose that option</li>
+      </ul>
+
+      <h3>2.2 Business profile</h3>
+      <p>If you complete your business profile, we store:</p>
+      <ul>
+        <li>Trading/business name</li>
+        <li>Contact name</li>
+        <li>Telephone number</li>
+        <li>Email address</li>
+        <li>Business address, city and postcode</li>
+        <li>Company number</li>
+        <li>VAT number</li>
+        <li>Date last updated</li>
+      </ul>
+      <p>This is stored on your device and synchronised to our servers (Google Firestore) so it is available across your sessions.</p>
+
+      <h3>2.3 Labour-rate profile</h3>
+      <ul>
+        <li>Town/location name you enter</li>
+        <li>Approximate coordinates (latitude/longitude) derived from that location</li>
+        <li>Labour categories, hourly rates and any custom rate categories you create</li>
+        <li>Date last updated</li>
+      </ul>
+
+      <h3>2.4 Job, customer and site information you enter</h3>
+      <p>When you create a job in the App, you may enter:</p>
+      <ul>
+        <li>Job title, type of work and description</li>
+        <li>Customer name, phone number and email address</li>
+        <li>Site address, city/town and postcode</li>
+        <li>Dimensions (length, width, height, calculated floor area)</li>
+        <li>Photographs of the job site</li>
+        <li>Creation, modification and archive status</li>
+      </ul>
+      <p><strong>Important:</strong> much of this information relates to <em>your customers</em>, not you. Section 9 explains your responsibilities regarding this data.</p>
+      <p>Job records, photos, estimates, quotes and contracts are stored locally on your device. Business profile, labour-rate profile and quote-template preference are also synchronised to our servers. Full job, customer, estimate, quote and contract records are <strong>not</strong> currently synchronised to our servers — they exist locally, on your device, only.</p>
+
+      <h3>2.5 Photographs</h3>
+      <p>Photos you attach to a job are copied into the App's private storage on your device, compressed, and linked to that job. Depending on the applicable allowance, up to five compressed photographs may be submitted for job analysis (see Section 4). We do not upload photos to any general cloud storage bucket. Photos are deleted from your device when you permanently delete the associated job.</p>
+
+      <h3>2.6 Estimates, quotes and contracts</h3>
+      <p>Draft estimates, finalised quotes and finalised contracts (including customer, job and business details embedded in them, and your company logo where added) are generated and stored locally on your device. PDF documents are created on your device when you preview or share them.</p>
+
+      <h3>2.7 Purchase data</h3>
+      <ul>
+        <li>Firebase user ID (used as your identifier with our payment processor, RevenueCat)</li>
+        <li>Product identifiers</li>
+        <li>Purchase and entitlement status</li>
+        <li>Store transaction identifiers and environment (e.g. sandbox/production)</li>
+      </ul>
+      <p>We do not receive or store your full card details. These are processed directly by Apple or Google as the store operator.</p>
+
+      <h3>2.8 Usage and allowance data</h3>
+      <p>To manage free job allowances and paid "Job Pack" credits, our servers store:</p>
+      <ul>
+        <li>Remaining credits</li>
+        <li>Whether your free job has been used</li>
+        <li>The source of your allowance (free, purchased pack, or app-review testing)</li>
+        <li>Photo and analysis limits associated with a job</li>
+        <li>Number of successful analyses performed and whether one is in progress</li>
+        <li>Associated timestamps</li>
+      </ul>
+
+      <h3>2.9 Technical and diagnostic data</h3>
+      <p>Where the App crashes or encounters certain errors, we may collect (via Firebase Crashlytics, in release builds only):</p>
+      <ul>
+        <li>Crash reports and stack traces</li>
+        <li>Exception/error messages</li>
+        <li>App version and build number</li>
+        <li>Device model and operating system version</li>
+        <li>Other diagnostic identifiers</li>
+      </ul>
+      <p>We do not deliberately attach your user ID to crash reports. However, certain manually logged sign-in error messages could incidentally include diagnostic text related to the authentication attempt.</p>
+
+      <h3>2.10 Location information</h3>
+      <p>We do not access your device's GPS or precise location. If you type a town or postcode during onboarding, that text is sent to a third-party postcode look-up service (postcodes.io), which returns an approximate location name and coordinates. This is a one-off, manually entered reference point used to determine your local labour rates — we do not track your ongoing location.</p>
+    </section>
+
+    <section class="policy-section" id="s3">
+      <h2>3. How We Use Your Data and Our Legal Basis</h2>
+      <table>
+        <tr><th>Purpose</th><th>Data used</th><th>Legal basis (UK GDPR Art. 6)</th></tr>
+        <tr><td>Creating and managing your account</td><td>Account/identity data</td><td>Performance of a contract</td></tr>
+        <tr><td>Storing your business and rate profiles</td><td>Business profile, labour-rate profile</td><td>Performance of a contract</td></tr>
+        <tr><td>Letting you create jobs, estimates, quotes and contracts</td><td>Job, estimate, quote, contract data</td><td>Performance of a contract</td></tr>
+        <tr><td>Generating AI-assisted estimates</td><td>Selected job details and photos (Section 4)</td><td>Performance of a contract; your explicit action in requesting an estimate</td></tr>
+        <tr><td>Processing Job Pack purchases</td><td>Purchase data</td><td>Performance of a contract</td></tr>
+        <tr><td>Preventing abuse of the lifetime free-job allowance and repeat claims</td><td>Hashed provider identifiers</td><td>Legitimate interests (fraud/abuse prevention)</td></tr>
+        <tr><td>Restoring purchased credits after account recreation</td><td>Hashed provider identifiers, credit balance</td><td>Legitimate interests; performance of a contract</td></tr>
+        <tr><td>Diagnosing crashes and technical issues</td><td>Crash/diagnostic data</td><td>Legitimate interests (keeping the App working)</td></tr>
+        <tr><td>Complying with legal, accounting or tax obligations</td><td>Purchase and transaction records</td><td>Legal obligation</td></tr>
+      </table>
+      <p>We do not use your data for third-party advertising, and we do not sell personal data.</p>
+    </section>
+
+    <section class="policy-section" id="s4">
+      <h2>4. AI-Assisted Estimate Generation</h2>
+      <p>If you request an AI-generated estimate, the App sends the following to our backend (hosted in Google Cloud's London, UK region) and then to our AI provider, OpenAI:</p>
+      <ul>
+        <li>Job title, type of work, description</li>
+        <li>Site city/town (not the full address or postcode)</li>
+        <li>Dimensions</li>
+        <li>Labour categories and hourly rates</li>
+        <li>Depending on the applicable allowance, up to five compressed photographs (if you provide them), sent at low image detail</li>
+        <li>If you are updating an existing estimate, the previous estimate and a description of what changed</li>
+      </ul>
+      <p>We do <strong>not</strong> deliberately send your customer's name, phone number, email, full site address, postcode, your business profile, or your company logo as part of this request.</p>
+      <p>Our contract with OpenAI is configured so that submitted content is not used to train OpenAI's models and is not retained by OpenAI for that purpose (<code>store: false</code>). OpenAI may still retain data for 30 days, for abuse-monitoring and safety purposes under its own API terms, consistent with its standard data-processing arrangements.</p>
+      <p>The estimate that is generated is returned to your device and stored locally. We do not deliberately store the resulting estimate text on our servers.</p>
+      <p><strong>Automated processing:</strong> the AI-generated estimate is a draft suggestion only. You review, edit and approve all figures before creating a quote or contract, and no automated decision with legal or similarly significant effect is made about you or your customers without your review.</p>
+    </section>
+
+    <section class="policy-section" id="s5">
+      <h2>5. Who We Share Your Data With</h2>
+      <p>We use the following service providers and platform operators. Some process data on our behalf, while others, including app-store and sign-in providers, may act as independent controllers under their own privacy terms:</p>
+      <table>
+        <tr><th>Recipient</th><th>What they receive</th><th>Why</th></tr>
+        <tr><td>Google Firebase / Google Cloud</td><td>Authentication data, synced profile data, allowance/analysis records, crash reports</td><td>Hosting our authentication, database, backend functions and diagnostics</td></tr>
+        <tr><td>Google (Sign-In / Play)</td><td>Sign-in credentials; purchase data if buying via Google Play</td><td>Enabling Google sign-in and Play purchases</td></tr>
+        <tr><td>Apple (Sign-In / App Store)</td><td>Sign-in credentials; purchase data if buying via the App Store</td><td>Enabling Apple sign-in and App Store purchases</td></tr>
+        <tr><td>RevenueCat</td><td>Firebase user ID, product IDs, purchase/entitlement and transaction data</td><td>Processing and reconciling in-app purchases</td></tr>
+        <tr><td>OpenAI</td><td>Selected job details and optional photos (Section 4)</td><td>Generating AI-assisted estimates</td></tr>
+        <tr><td>postcodes.io</td><td>Town/postcode text you enter</td><td>Converting it to coordinates for labour-rate lookup</td></tr>
+        <tr><td>Your chosen email/messaging/file-sharing app</td><td>A quote or contract PDF, only when you choose to share it</td><td>Letting you send documents to your customer or elsewhere</td></tr>
+      </table>
+      <p>We do not sell personal data or disclose it to third parties for their independent advertising purposes. Platform operators may process information for the purposes described in their own privacy notices.</p>
+      <p>Where you use the "share" or "email" function, the PDF leaves our control entirely once handed to your device's operating system and the app you choose (e.g. Mail, Gmail, WhatsApp, cloud storage). That recipient processes it under its own privacy terms, not ours.</p>
+    </section>
+
+    <section class="policy-section" id="s6">
+      <h2>6. International Data Transfers</h2>
+      <p>Some of our service providers and platform operators—including Google (Firebase, Google Cloud, Google Sign-In and Google Play), OpenAI, RevenueCat, Apple, and Ideal Postcodes/Postcodes.io—may process personal data outside the UK, including in the European Economic Area and the United States.
+Where personal data is transferred to a country that is not covered by UK adequacy regulations, we use an applicable lawful transfer mechanism. This may include the UK International Data Transfer Agreement, the UK Addendum to the European Commission’s Standard Contractual Clauses, or another safeguard permitted under UK data protection law.</p>
+        <ul>
+            <li>Google — Firebase Authentication, Firestore, Cloud Functions, Remote Config, Crashlytics, Google Sign-In and Google Play.</li>
+            <li>OpenAI — job analysis, including any submitted descriptions and optional photos.</li>
+            <li>RevenueCat — purchase validation and Job Pack entitlement management.</li>
+            <li>Apple — Sign in with Apple, App Store distribution and purchases.</li>
+            <li>Ideal Postcodes / Postcodes.io — postcode and town lookup. Postcodes.io states that it is maintained by Ideal Postcodes.</li>
+        </ul>
+    </section>
+
+    <section class="policy-section" id="s7">
+      <h2>7. How Long We Keep Your Data</h2>
+      <table>
+        <tr><th>Data</th><th>Retention</th></tr>
+        <tr><td>Account, business profile, labour-rate profile, quote preference</td><td>Until you delete your account</td></tr>
+        <tr><td>Local job, photo, estimate, quote and contract data</td><td>Until you permanently delete the individual job, delete your account from that device, or otherwise remove the App's local data. Information included in a device backup may remain until that backup is separately deleted or expires under the backup provider's retention policy.</td></tr>
+        <tr><td>Billing/allowance records (Firestore)</td><td>Active account allowance records — until account deletion, except for the retained records described in section 7</td></tr>
+        <tr><td>Hashed anti-abuse claim record</td><td>Retained for six months after account deletion to prevent repeated claims of the lifetime free-job allowance</td></tr>
+        <tr><td>Hashed purchase-credit restoration record</td><td>Retained for six months after account deletion so credits can be restored if you sign back in with the same account within that period, then automatically deleted</td></tr>
+        <tr><td>BuildKnack’s pseudonymised RevenueCat webhook event records</td><td>Three years from the event date for accounting, fraud prevention and purchase reconciliation.</td></tr>
+        <tr><td>Crash/diagnostic logs (Crashlytics)</td><td>Crash and diagnostic data is generally retained by Firebase Crashlytics for 90 days.</td></tr>
+        <tr><td>Cloud Function / server logs</td><td>Application and Cloud Function logs are generally retained for 30 days. Certain Google Cloud audit logs may be retained for longer under Google Cloud’s applicable default retention periods.</td></tr>
+      </table>
+    </section>
+
+    <section class="policy-section" id="s8">
+      <h2>8. Deleting Your Account and Your Rights</h2>
+
+      <h3>8.1 What happens when you delete your account</h3>
+      <p>When you delete your BuildKnack account, we:</p>
+      <ul>
+        <li>Delete your Firestore data record (business profile, labour-rate profile, preferences, allowance and analysis records)</li>
+        <li>Delete your Firebase Authentication account</li>
+        <li>Erase BuildKnack content stored locally on the device from which you delete the account. Content stored on another device, in a device backup, or previously exported or shared must be deleted separately.</li>
+        <li>Local data may be included in device backups controlled by Google or Apple.</li>
+        <li>Retain, in hashed (non-reversible) form only, a record used to prevent repeated free-trial claims, for the period described in Section 7</li>
+        <li>Automatically delete the retained purchase-credit record after its defined retention period expires, per Section 7</li>
+      </ul>
+      <p>Some information is not removed immediately by account deletion. This includes BuildKnack's pseudonymised purchase-event records and technical logs retained for the periods in Section 7. RevenueCat, Apple and Google may also retain their own purchase or platform records under their respective privacy policies.</p>
+
+      <h3>8.2 Your rights under UK GDPR</h3>
+      <p>You have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal data we hold about you</li>
+        <li><strong>Rectify</strong> inaccurate or incomplete data</li>
+        <li><strong>Erase</strong> your data ("right to be forgotten"), subject to Section 8.1 above</li>
+        <li><strong>Restrict</strong> or <strong>object to</strong> our processing in certain circumstances</li>
+        <li><strong>Data portability</strong> for data you provided to us and that we process by automated means under contract</li>
+        <li><strong>Withdraw consent</strong> at any time, where processing is based on consent</li>
+        <li><strong>Complain to the Information Commissioner's Office (ICO)</strong> at ico.org.uk or 0303 123 1113, if you believe we have not handled your data properly</li>
+      </ul>
+      <p>Information stored only on your device is not normally accessible to Tecknack and may therefore need to be accessed, corrected, exported or deleted directly through the App or on that device.</p>
+      <p>To exercise these rights, contact us at privacy@tecknack.co.uk. We will respond within one month, as required by law.</p>
+    </section>
+
+    <section class="policy-section" id="s9">
+      <h2>9. Your Customers' Data</h2>
+      <p>BuildKnack lets you, the builder or tradesperson using the App, enter personal information belonging to <strong>your own customers</strong> — including names, phone numbers, email addresses, site addresses and photographs of their property.</p>
+      <p>In relation to this information:</p>
+      <ul>
+        <li><strong>You</strong>, not Tecknack, are the data controller for your customers' personal data that you input into the App. You are responsible for having a lawful basis (typically your contract with your customer, or your legitimate interest in providing a quote) to collect and process it.</li>
+          <li>For customer information stored only on your device, Tecknack does not ordinarily receive or have access to that information. Tecknack processes selected customer-related job information on your behalf when you request job analysis or use another server-based feature.</li>
+        <li>Where customer-related information is transmitted to our backend for job analysis, Tecknack processes that information on your behalf as a <strong>data processor</strong>. OpenAI and relevant cloud providers act as our subprocessors for that processing.</li>
+        <li>You should let your customers know, in an appropriate way, that their information may be used to generate quotes and estimates, including through an AI-assisted process where photos or job descriptions may be involved.</li>
+        <li>We recommend avoiding the inclusion of people's faces, vehicle number plates, documents, or unrelated personal belongings in photographs submitted for AI analysis, and cropping or selecting photos accordingly.</li>
+        <li>You should only collect the customer information reasonably necessary to provide your quote or service, and should handle it securely (e.g. not sharing your device or exported PDFs insecurely).</li>
+      </ul>
+    </section>
+
+    <section class="policy-section" id="s10">
+      <h2>10. Children</h2>
+      <p>BuildKnack is a business tool intended for use by tradespeople and is not directed at, or intended for use by, children. We do not knowingly collect personal data from children.</p>
+    </section>
+
+    <section class="policy-section" id="s11">
+      <h2>11. Security</h2>
+      <p>We use industry-standard measures to protect your data, including encrypted connections (TLS) between the App and our servers, access-controlled cloud infrastructure, and Firestore security rules that restrict your synced records to your own authenticated account. No system can be guaranteed completely secure, and you are responsible for keeping your device and sign-in credentials secure.</p>
+    </section>
+
+    <section class="policy-section" id="s12">
+      <h2>12. Analytics</h2>
+      <p>BuildKnack does not currently use Firebase Analytics or any equivalent analytics or advertising SDK. If this changes in future, we will update this Policy before doing so, and will ensure that:</p>
+      <ul>
+        <li>No customer names, job details, addresses or other user-entered content are placed into analytics event data</li>
+        <li>You are informed of what is collected and, where required, given the ability to opt out</li>
+        <li>Any advertising-related signals (e.g. Google Signals) are disabled unless we specifically state and obtain consent otherwise</li>
+      </ul>
+    </section>
+
+    <section class="policy-section" id="s13">
+      <h2>13. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time, for example to reflect new features (such as analytics) or changes to our service providers. We will post the updated version in the App and update the "Last updated" date above. Material changes will be brought to your attention.</p>
+    </section>
+
+    <section class="policy-section" id="s14">
+      <h2>14. Contact Us</h2>
+      <p>If you have questions, concerns, or wish to exercise your data protection rights, contact us at:</p>
+      <p>
+        privacy@tecknack.co.uk
+      </p>
+      <p>You also have the right to lodge a complaint with the UK Information Commissioner's Office (ICO) at any time: <strong>ico.org.uk</strong>.</p>
+    </section>
+
+    <footer class="doc-footer">
+    </footer>
+  </main>
 </div>
+
+<script>
+  // Highlight the active section in the table of contents while scrolling
+  const sections = document.querySelectorAll('main section[id]');
+  const links = document.querySelectorAll('nav.toc a');
+  const linkMap = {};
+  links.forEach(l => { linkMap[l.getAttribute('href').slice(1)] = l; });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = linkMap[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
